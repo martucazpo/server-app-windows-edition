@@ -1,10 +1,10 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "cd app && npm i",
+    "beforeBuildCommand": "",
     "beforeDevCommand": "cd app && npm run start",
     "devPath": "http://localhost:8181",
-    "distDir": "../app"
+    "distDir": "../app/build"
   },
   "package": {
     "productName": "JSON-server",
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.tauri.dev.json-server",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
