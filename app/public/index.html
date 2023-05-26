@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *,
+        html,
+        body,
+        ::before,
+        ::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            background-color: rgb(228, 247, 240);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-header {
+            background-color: rgb(3, 48, 33);
+            color: white;
+            width: 100%;
+            min-width: 100vw;
+            text-align: center;
+        }
+
+        main {
+            margin: 1em;
+            background-color: rgb(240, 250, 246);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(54, 53, 53);
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        .endpoint-div {
+            padding: 1em;
+            background-color: rgb(185, 248, 248);
+        }
+
+        main section {
+            margin: 1em;
+            background-color: white;
+            padding: 1em;
+        }
+
+        .code {
+            margin: 2em;
+            padding: 1em;
+            background-color: lightgoldenrodyellow;
+        }
+
+        span {
+            display: block;
+        }
+
+        .dataset-div {
+            background-color: rgb(247, 207, 213);
+            margin: 1em;
+        }
+    </style>
+    <title>JSON-Server App</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>JSON Server</h1>
+    </header>
+    <main>
+        <section>
+            <header>
+                <h3>Endpoints:</h3>
+            </header>
+            <div class="endpoint-div">
+                <ul>
+                    <li><a href="http://localhost:8181/jsonplaceholder/api/albums">/jsonplaceholder/api/albums</a></li>
+                    <li><a href="http://localhost:8181/freecodecamp/authors">/freecodecamp/authors</a></li>
+                    <li><a href="http://localhost:8181/jsonplaceholder/api/comments">/jsonplaceholder/api/comments</a>
+                    </li>
+                    <li><a href="http://localhost:8181/jsonplaceholder/api/posts">/jsonplaceholder/api/posts</a></li>
+                    <li><a href="http://localhost:8181/jsonplaceholder/api/todos">/jsonplaceholder/api/todos</a></li>
+                    <li><a href="http://localhost:8181/jsonplaceholder/api/users">/jsonplaceholder/api/users</a></li>
+                </ul>
+                <small>To return from endpoint, right click and select "back"</small>
+            </div>
+        </section>
+        <section>
+            <header>
+                <h3>Use with Fetch or Axios</h3>
+            </header>
+            <article>
+                <h4>Fetch</h4>
+                <div>
+                    <div class="code">
+                        <span>//function goes in place of console.log</span>
+
+                        <span>fetch("http://localhost:8181/freecodecamp/authors/")
+                            .then(res => res.json())
+                            .then(res => console.log(res))</span>
+                            <span style="height:0.5em;"></span>
+                        <span>const getUser = async() => await fetch("http://localhost:8181/jsonplaceholder/api/users")
+                            .then(res => res.json())
+                            .then(res => console.log(res))
+                            getUser()</span>
+                    </div>
+                </div>
+                <h4>Axios</h4>
+                <div>
+                    <div class="code">
+                        <span>//function goes in place of console.log</span>
+
+                        <span>const posts = axios.get("http://localhost:8181/jsonplaceholder/api/posts")
+                            .then(res => console.log(res.data))</span>
+                            <span style="height:0.5em;"></span>
+                        <span>const getTodos = async () => await
+                            axios.get("http://localhost:8181/jsonplaceholder/api/todos")
+                            .then(res => console.log(res.data))
+                            getTodos()</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="dataset-div">
+            <h4>Datasets</h4>
+            <p>The authors dataset is from freecodecamp.org. All the resources have been scraped from the freecodecamp
+                site and are served up on the local host.</p>
+            <p>Freecode camp is an excellent free, open source resource, and the base of our curriculum</p>
+            <p>The jsonplaceholder endpoints are from jsonplaceholder.com, a great free open source resource on the Web
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
