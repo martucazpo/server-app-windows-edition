@@ -1,10 +1,10 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "",
+    "beforeBuildCommand": "cd app && index-win.exe",
     "beforeDevCommand": "cd app && npm run start",
     "devPath": "http://localhost:8181",
-    "distDir": "../app/build"
+    "distDir": "../app"
   },
   "package": {
     "productName": "JSON-server",
